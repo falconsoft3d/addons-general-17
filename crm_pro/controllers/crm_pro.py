@@ -61,7 +61,7 @@ class CrmPro(http.Controller):
             chat = ir_config_parameter_chat_id.value
 
 
-            _initia_test = "Nuevo contacto desde la web crm.bim30.com \n"
+            _initia_test = " 👋  Nuevo contacto desde la web crm.bim30.com \n"
             _test = _initia_test + "\n" + name + "\n" + email + " \n" + phone + " \n" + text + " \n"
 
             payload = json.dumps({
