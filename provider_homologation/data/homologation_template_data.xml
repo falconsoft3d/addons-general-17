@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="homologation_template_base_one" model="homologation.template">
+            <field name="name">Basic Template</field>
+            <field name="active">1</field>
+            <field name="line_ids" eval="[
+            (0, 0, {
+                'name': 'Email',
+                'field_type': 'char',
+                'required': True,
+                'category': 'data'
+            }),
+            (0, 0, {
+                'name': 'Website',
+                'field_type': 'char',
+                'required': False,
+                'category': 'data'
+            }),
+            (0, 0, {
+                'name': 'Phone',
+                'field_type': 'number',
+                'required': False,
+                'category': 'data'
+            }),
+            (0, 0, {
+                'name': 'Video Ética',
+                'field_type': 'binary',
+                'required': True,
+                'category': 'document'
+            }),
+            (0, 0, {
+                'name': 'Contrato de Homologación',
+                'field_type': 'binary',
+                'required': True,
+                'category': 'document'
+            })
+        ]"/>
+        </record>
+    </data>
+</odoo>

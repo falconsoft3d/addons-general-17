@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sequence_view_account_journal_form" model="ir.ui.view">
+            <field name="name">sequence.view.account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='refund_sequence']" position="before">
+                    <field name="main_sequence_id" groups="journal_sequences.group_sequence_manager"/>
+                    <field name="rect_sequence_id" groups="journal_sequences.group_sequence_manager"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="sequence_view_form_inherit" model="ir.ui.view">
+            <field name="name">sequence_view_form_inherit</field>
+            <field name="model">ir.sequence</field>
+            <field name="inherit_id" ref="base.sequence_view"/>
+            <field name="arch" type="xml">
+                <field name="prefix" position="replace">
+                    <field name="prefix" invisible="1"/>
+                    <field name="prefix" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="suffix" position="replace">
+                    <field name="suffix" invisible="1"/>
+                    <field name="suffix" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="padding" position="replace">
+                    <field name="padding" invisible="1"/>
+                    <field name="padding" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="number_increment" position="replace">
+                    <field name="number_increment" invisible="1"/>
+                    <field name="number_increment" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="number_next_actual" position="replace">
+                    <field name="number_next_actual" invisible="1"/>
+                    <field name="number_next_actual" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="use_date_range" position="replace">
+                    <field name="use_date_range" invisible="1"/>
+                    <field name="use_date_range" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="name" position="replace">
+                    <field name="name" invisible="1"/>
+                    <field name="name" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="implementation" position="replace">
+                    <field name="implementation" invisible="1"/>
+                    <field name="implementation" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="code" position="replace">
+                    <field name="code" invisible="1"/>
+                    <field name="code" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                 <field name="active" position="replace">
+                    <field name="active" invisible="1"/>
+                    <field name="active" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+                <field name="company_id" position="replace">
+                    <field name="company_id" invisible="1"/>
+                    <field name="company_id" groups="journal_sequences.group_sequence_manager"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

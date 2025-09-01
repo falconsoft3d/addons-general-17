@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="run_sql_form_view" model="ir.ui.view">
+            <field name="name">run.sql.form.view</field>
+            <field name="model">run.sql.wzd</field>
+            <field name="arch" type="xml">
+                <form>
+                	<sheet>
+                            <group>
+                                <field name="sql_query"/>
+                            </group>
+
+                        <footer>
+                            <button name="action_run_sql" string="RUN SQL" type="object" class="btn btn-primary" confirm="Byr running this Query you will alter data in your Database"/>
+
+                            <button string="Cancel" class="btn btn-default" special="cancel" />
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_run_sql_wzd" model="ir.actions.act_window">
+          <field name="name">RUN SQL</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">run.sql.wzd</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+        </record>
+
+        <menuitem id="invoice_collection_forecast_menu"
+                  name="Run SQL"
+                  web_icon="run_sql_query,static/description/run.png"
+                  action="action_run_sql_wzd" sequence="89" />
+
+
+    </data>
+</odoo>

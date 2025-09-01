@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="link_category" model="ir.module.category">
+            <field name="name">Link</field>
+            <field name="description">Link</field>
+            <field name="sequence" eval="90"/>
+        </record>
+
+        <record id="group_user_link" model="res.groups">
+            <field name="name">User Link</field>
+            <field name="category_id" ref="link_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+</odoo>

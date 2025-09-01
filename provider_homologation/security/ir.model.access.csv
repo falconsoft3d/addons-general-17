@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_homologation_template,homologation.template,model_homologation_template,,1,1,1,1
+access_homologation_template_line,homologation.template.line,model_homologation_template_line,,1,1,1,1
+access_homologation_process,homologation.process,model_homologation_process,,1,1,1,1
+access_homologation_process_line,homologation.process.line,model_homologation_process_line,,1,1,1,1
+access_homologation_process_document,homologation.process.document,model_homologation_process_document,,1,1,1,1

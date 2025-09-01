@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_cron_homologation_monthly" model="ir.cron">
+            <field name="name">Homologation Monthly Check</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">model._check_homologation_period()</field>
+            <field name="active">True</field>
+            <field name="interval_type">months</field>
+            <field name="interval_number">1</field>
+            <field name="numbercall">-1</field>
+        </record>
+    </data>
+</odoo>

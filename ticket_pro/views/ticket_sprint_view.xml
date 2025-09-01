@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="ticket_sprint_view_form" model="ir.ui.view">
+            <field name="name">ticket.sprint.view.form</field>
+            <field name="model">ticket.sprint</field>
+            <field name="arch" type="xml">
+                <form string="Sprint">
+                    <sheet>
+                     <!-- <div class="oe_button_box" name="button_box">
+                         <button name="action_view_ticket" type="object" class="oe_stat_button" icon="fa-check" >
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value"><field name="ticket_count" widget="statinfo" nolabel="1"/></span>
+                                <span class="o_stat_text">Ticket</span>
+                            </div>
+                        </button>
+                     </div> -->
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="ticket_sprint_view_tree" model="ir.ui.view">
+            <field name="name">ticket.sprint.view.tree</field>
+            <field name="model">ticket.sprint</field>
+            <field name="arch" type="xml">
+                <tree string="Sprint">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ticket_sprint_action" model="ir.actions.act_window">
+            <field name="name">Ticket Sprint</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ticket.sprint</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="ticket_sprint_act" name="Sprint de Proyectos" parent="ticket_notes_categ" action="ticket_sprint_action"/>
+    </data>
+</odoo>

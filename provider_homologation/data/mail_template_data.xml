@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_homologation_request" model="mail.template">
+            <field name="name">Homologation Request</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="subject">Homologation Request</field>
+            <field name="email_from">${object.company_id.email}</field>
+            <field name="email_to">${object.email}</field>
+            <field name="body_html">
+                <![CDATA[
+                <div style="margin: 0px; padding: 0px;">
+                    Dear <t t-out="object.name or  ''">Brandon Freeman</t><br/>
+                    <p>The approval process has started.</p>
+                    <p>Please review the attached documents and complete the required information.</p>
+                </div>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

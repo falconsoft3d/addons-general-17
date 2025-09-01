@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_close_accounting_entries_user,account.close.accounting.entries,model_account_close_accounting_entries,,1,0,0,0
+access_close_accounting_entries_manager,account.close.accounting.entries,model_account_close_accounting_entries,group_close_accounting_entries,1,1,1,1
+
+
+
+
+

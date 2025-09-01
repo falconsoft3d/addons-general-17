@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+    <record id="view_form_matplotlib_bi" model="ir.ui.view">
+         <field name="name">view.form.matplotlib_bi</field>
+         <field name="model">matplotlib.bi</field>
+         <field name="arch" type="xml">
+            <form string="Matplotlib BI">
+              <header>
+
+                  <button name="exe_update" string="update" class="oe_highlight" type="object"/>
+
+              </header>
+              <sheet>
+                  <group>
+                      <group>
+                          <field name="name"/>
+                          <field name="code"
+                                widget="code"
+                          />
+                          <field name="type_origin"/>
+                          <field name="company_id"/>
+                          <field name="user_id"/>
+                       </group>
+                      <group>
+                          <field name="analysis_graph" widget="image"/>
+                       </group>
+                  </group>
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_matplotlib_bi" model="ir.ui.view">
+         <field name="name">view.tree.matplotlib.bi</field>
+         <field name="model">matplotlib.bi</field>
+         <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="type_origin"/>
+                <field name="company_id" />
+                <field name="user_id" />
+            </tree>
+        </field>
+    </record>
+
+
+    <!--  canva -->
+    <record id="view_form_matplotlib_bi_kanban" model="ir.ui.view">
+         <field name="name">view.kanban.matplotlib.bi</field>
+         <field name="model">matplotlib.bi</field>
+         <field name="arch" type="xml">
+            <kanban string="Matplotlib BI Canva">
+                <field name="analysis_graph" widget="image"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_image">
+                                <img t-att-src="kanban_image('matplotlib.bi', 'analysis_graph', record.id.value)" style="width: 100%; height: auto"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_matplotlib_bi" model="ir.actions.act_window">
+        <field name="name">Matplotlib BI</field>
+        <field name="res_model">matplotlib.bi</field>
+        <field name="view_id" ref="view_tree_matplotlib_bi"/>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Create a new register</p>
+       </field>
+    </record>
+
+    <menuitem id="menu_matplotlib_bi"
+        name="Matplotlib BI"
+        sequence="40"
+        groups="matplotlib_bi.matplotlib_bi_manager_group"
+        web_icon="matplotlib_bi,static/description/icon.png"
+        >
+
+        <menuitem id="menu_matplotlib_bi_son"
+            name="Matplotlib BI"
+            sequence="10"
+            groups="matplotlib_bi.matplotlib_bi_manager_group"
+            action="action_matplotlib_bi"/>
+
+    </menuitem>
+
+     </data>
+</odoo>

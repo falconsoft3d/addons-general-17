@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_generate_order" model="ir.ui.view">
+        <field name="name">view.generate.order</field>
+        <field name="model">generate.order.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generar Pedido">
+                <group>
+                    <group>
+                        <field name="action_to_do"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Generar" name="generate_order" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_generate_order" model="ir.actions.act_window">
+        <field name="name">Generar Pedido</field>
+        <field name="res_model">generate.order.wizard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_generate_order"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

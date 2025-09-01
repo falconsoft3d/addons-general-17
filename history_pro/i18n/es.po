@@ -1,0 +1,444 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* history_pro
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-24 13:21+0000\n"
+"PO-Revision-Date: 2024-11-24 13:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.actions.act_window,name:history_pro.action_all_history_pro
+#: model:ir.ui.menu,name:history_pro.menu_all_invoice_history_pro
+msgid "All"
+msgstr "Todos"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__state__cancel
+msgid "Cancelled"
+msgstr "Candelado"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__company_id
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: history_pro
+#: model_terms:ir.actions.act_window,help:history_pro.action_all_history_pro
+#: model_terms:ir.actions.act_window,help:history_pro.action_invoice_line_history_pro
+#: model_terms:ir.actions.act_window,help:history_pro.action_other_history_pro
+#: model_terms:ir.actions.act_window,help:history_pro.action_purchase_invoice_history_pro
+#: model_terms:ir.actions.act_window,help:history_pro.action_sale_invoice_history_pro
+msgid "Create a new register!"
+msgstr "Crear un nuevo registro!"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__create_uid
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__create_date
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__currency_id
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__type__out_invoice
+msgid "Customer Invoice"
+msgstr "Factura de Cliente"
+
+#. module: history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__type__out_refund
+msgid "Customer Refund"
+msgstr "Rectificativa de Cliente"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__date
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__invoice_date
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__discount
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__display_name
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.ui.menu,name:history_pro.menu_history_pro
+#: model:ir.ui.menu,name:history_pro.menu_history_pro_son
+#: model:res.groups,name:history_pro.history_pro_group
+msgid "History Pro"
+msgstr "Histórico Pro"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__id
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__id
+msgid "ID"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__message_has_error
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: history_pro
+#: model_terms:ir.ui.view,arch_db:history_pro.view_form_invoice_history_pro
+msgid "Invoice History"
+msgstr "Factura Histórica"
+
+#. module: history_pro
+#: model:ir.model,name:history_pro.model_invoice_history_pro
+msgid "Invoice History Pro"
+msgstr "Factura Histórica Pro"
+
+#. module: history_pro
+#: model:ir.model,name:history_pro.model_invoice_history_pro_line
+msgid "Invoice History Pro Line"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.actions.act_window,name:history_pro.action_invoice_line_history_pro
+#: model:ir.ui.menu,name:history_pro.menu_invoice_line_history_pro
+#: model_terms:ir.ui.view,arch_db:history_pro.view_form_invoice_history_pro
+msgid "Invoice Line"
+msgstr "Línea de Asiento"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__write_uid
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__write_date
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__invoice_line_ids
+msgid "Lines"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__name
+msgid "Name"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__narration
+msgid "Notes"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__old_id
+msgid "Old ID"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__state__open
+msgid "Open"
+msgstr "Abierto"
+
+#. module: history_pro
+#: model:ir.actions.act_window,name:history_pro.action_other_history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__type__other
+msgid "Other"
+msgstr "Otro"
+
+#. module: history_pro
+#: model:ir.ui.menu,name:history_pro.menu_other_invoice_history_pro
+msgid "Other Account Move"
+msgstr "Otros Asientos Contables"
+
+#. module: history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__state__paid
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__partner_id
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__name
+msgid "Product"
+msgstr "Producto"
+
+#. module: history_pro
+#: model:ir.actions.act_window,name:history_pro.action_purchase_invoice_history_pro
+#: model:ir.ui.menu,name:history_pro.menu_purchase_invoice_history_pro
+msgid "Purchase Invoice"
+msgstr "Factura de Compra"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.actions.act_window,name:history_pro.action_sale_invoice_history_pro
+#: model:ir.ui.menu,name:history_pro.menu_history_pro_invoice_sale
+msgid "Sale Invoice"
+msgstr "Factura de Venta"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__amount_tax
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__amount_tax
+msgid "Tax Amount"
+msgstr "Importe de Impuestos"
+
+#. module: history_pro
+#: model_terms:ir.ui.view,arch_db:history_pro.view_form_invoice_history_pro
+msgid "Terms and Conditions"
+msgstr "Términos y Condiciones"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__amount_total
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__amount_total
+msgid "Total Amount"
+msgstr "Total"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__price_unit
+msgid "Unit Price"
+msgstr "Precio Unitario"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__amount_untaxed
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro_line__amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Total sin Impuestos"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__type__in_invoice
+msgid "Vendor Bill"
+msgstr "Factura de Proveedor"
+
+#. module: history_pro
+#: model:ir.model.fields.selection,name:history_pro.selection__invoice_history_pro__type__in_refund
+msgid "Vendor Refund"
+msgstr "Rectificativa de Proveedor"
+
+#. module: history_pro
+#: model:ir.model.fields,field_description:history_pro.field_invoice_history_pro__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: history_pro
+#: model:ir.model.fields,help:history_pro.field_invoice_history_pro__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: history_pro
+#: model_terms:ir.ui.view,arch_db:history_pro.view_form_invoice_history_pro
+#: model_terms:ir.ui.view,arch_db:history_pro.view_tree_invoice_history_line_pro
+#: model_terms:ir.ui.view,arch_db:history_pro.view_tree_invoice_history_pro
+msgid "sum"
+msgstr ""

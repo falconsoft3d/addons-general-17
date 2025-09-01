@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+    <meta name="keywords" content="odooo,developer">
+    <meta name="description" content="Portal">
+    <title>Portal | {{company.name}} </title>
+    <link rel="icon" sizes="192x192" href="/web/static/img/mobile-icons/android-192x192.png"/>
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="/supplier_portal/static/assets/css/login.css" rel="stylesheet">
+
+</head>
+<body class="text-center">
+<main class="form-signin w-100 m-auto">
+    <!-- Hide form is user is logged in -->
+    <form id="loginForm">
+        <img class="mb-4" src="{{company_logo}}"
+             alt=""
+             width="auto" height="57">
+        <div class="form-floating">
+            <input type="email" class="form-control" id="portal_login"
+                   autofocus required>
+            <label for="portal_login">Correo</label>
+        </div>
+        <div class="form-floating mt-3">
+            <input type="password" class="form-control" id="portal_pass" required>
+            <label for="portal_pass">Contraseña</label>
+        </div>
+        <input type="hidden" id="csrf_token" value="{{csrf_token}}"/>
+        <button class="w-100 btn btn-lg btn-primary mt-3" id="btn" onclick="login()"
+                type="submit">Entrar
+        </button>
+        <p class="mt-5 mb-3 text-muted">Portal de Proveedor /  &copy; {{company.name}}</p>
+    </form>
+</main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<script>
+
+
+    function login() {
+        console.log("loginUser")
+        event.preventDefault();
+
+        let _login = $('#portal_login').val();
+        let _pass = $('#portal_pass').val();
+        let _csrf_token = $('#csrf_token').val();
+
+
+
+        $.ajax({
+            url: '/supplier_portal/login/check',
+            method: 'post',
+            timeout: 0,
+            headers: {
+                    'Content-Type': 'application/json'
+                },
+            data: `{
+                     "params": {
+                                    "csrt_token": "${_csrf_token}",
+                                    "email": "${_login}"
+                                    "password": "${_pass}"
+                                }
+                   }`,
+            success: function (data) {
+                if (response.result.status == "ok") {
+                    window.location.href = '/supplier_portal/home/';
+                } else {
+                    $('#loginForm').append('<div class="alert alert-danger mt-2" role="alert" id="error">Error en credenciales</div>');
+                }
+            }
+        });
+
+    }
+
+</script>
+
+
+</html>

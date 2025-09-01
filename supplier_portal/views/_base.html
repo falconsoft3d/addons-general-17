@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Supplier Portal 1.0 | {{company.name}} </title>
+    <link type="image/x-icon" rel="shortcut icon" href="/supplier_portal/static/assets/img/favicon.ico"/>
+
+    <!-- Custom fonts for this template-->
+    <link href="/supplier_portal/static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+          type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Custom styles for this template sb-admin-2.min.css-->
+    <link href="/supplier_portal/static/assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center"
+           href="/portal/home/{{ virtual_user_id.id }}">
+            <div class="sidebar-brand-icon">
+                <i class="fas fa-box"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Supplier Portal</div>
+        </a>
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/portal/home/{{ virtual_user_id.id }}">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Inicio</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        {% if virtual_user_id.portal %}
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/portal/attendance/{{ virtual_user_id.id }}">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Asistencias ( Cliente )</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+        {% endif %}
+
+
+        {% if virtual_user_id.internal %}
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/portal/register-list/{{ virtual_user_id.id }}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Asistencias (Responsable)</span></a>
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/portal/register/{{ virtual_user_id.id }}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Registrar (Responsable)</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        {% endif %}
+
+
+
+
+        {% if virtual_user_id.employee %}
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/portal/employee/{{ virtual_user_id.id }}">
+                <i class="fas fa-fw fa-box"></i>
+                <span>Registrar (Empleado)</span></a>
+        </li>
+
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+        {% endif %}
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="/portal/config/{{ virtual_user_id.id }}">
+                <i class="fas fa-fw fa-tools"></i>
+                <span>Configuración</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item dropdown no-arrow">
+              <span class="nav-link dropdown-toggle">
+                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+                       id="user_name">{{ virtual_user_id.name }} | {{ virtual_user_id.partner_id.name }}</span>
+              </span>
+                    </li>
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" onclick="MenuLogout()"
+                           id="userDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cerrar</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                {% block content %}
+                {% endblock %}
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <input type="hidden" id="virtual_user_check" value="{{ virtual_user_id.id }}"/>
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy;  <a href="https://www.marlonfalcon.com">www.marlonfalcon.com</a> | 2024</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Bootstrap core JavaScript-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/supplier_portal/static/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/supplier_portal/static/assets/js/sb-admin-2.min.js"></script>
+
+<!--
+<script src="/supplier_portal/static/assets/js/security.js"></script>
+<script src="/supplier_portal/static/assets/js/attendance2.js"></script>
+-->
+
+<!-- Page level plugins -->
+<script src="/supplier_portal/static/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="/supplier_portal/static/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<script src="/supplier_portal/static/assets/js/datatables1.js"></script>
+
+</body>
+</html>

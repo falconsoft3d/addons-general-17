@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_homologation_template_form" model="ir.ui.view">
+        <field name="name">homologation.template.form</field>
+        <field name="model">homologation.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group colspan="2">
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="Campos de Homologación">
+                            <field name="line_ids" context="{'default_template_id': active_id}">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="field_type"/>
+                                    <field name="required"/>
+                                    <field name="category"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_homologation_template_tree" model="ir.ui.view">
+        <field name="name">homologation.template.tree</field>
+        <field name="model">homologation.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_homologation_template" model="ir.actions.act_window">
+        <field name="name">Homologation Templates</field>
+        <field name="res_model">homologation.template</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

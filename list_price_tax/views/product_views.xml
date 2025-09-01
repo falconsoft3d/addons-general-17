@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Product Template -->
+
+    <record model="ir.ui.view" id="inh_res_product_pvp_form_view">
+        <field name="name">inh.res.product.pvp.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form[@name='Product Template']/sheet[@name='product_form']/notebook[1]/page[@name='general_information']/group[1]/group[@name='group_standard_price']/label[1]" position="before">
+                <field name="list_price_tax"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="inh_res_product_pvp_tree_view">
+        <field name="name">inh.res.product.pvp.tree.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="standard_price" position="before">
+                <field name="list_price_tax" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+
+    <!-- Product Variant  -->
+
+    <record model="ir.ui.view" id="inh_res_product_pvp2_form_view">
+        <field name="name">inh.res.product.pvp2.form.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form[1]/sheet[@name='product_form']/notebook[1]/page[@name='general_information']/group[1]/group[@name='group_standard_price']/label[1]" position="before">
+                <field name="list_price_tax"/>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+     <record model="ir.ui.view" id="inh_res_product_pvp2_tree_view">
+        <field name="name">inh.res.product.pvp2.tree.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="standard_price" position="before">
+                <field name="list_price_tax" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

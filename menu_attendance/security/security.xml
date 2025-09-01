@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="group_user_attendance_menu" model="res.groups">
+            <field name="name">Attendance</field>
+        </record>
+</odoo>

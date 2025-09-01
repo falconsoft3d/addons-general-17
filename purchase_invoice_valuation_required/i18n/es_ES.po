@@ -1,0 +1,35 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_invoice_valuation_required
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240827\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-16 22:28+0000\n"
+"PO-Revision-Date: 2024-12-16 22:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_invoice_valuation_required
+#: model:ir.model,name:purchase_invoice_valuation_required.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: purchase_invoice_valuation_required
+#. odoo-python
+#: code:addons/purchase_invoice_valuation_required/models/account_move.py:0
+#, python-format
+msgid "The Valuation guide is mandatory in this type of Invoice."
+msgstr "La guía de Valuación es obligatoria en este tipo de Factura."
+
+#. module: purchase_invoice_valuation_required
+#: model:ir.model.fields,field_description:purchase_invoice_valuation_required.field_account_bank_statement_line__valuation_file
+#: model:ir.model.fields,field_description:purchase_invoice_valuation_required.field_account_move__valuation_file
+#: model:ir.model.fields,field_description:purchase_invoice_valuation_required.field_account_payment__valuation_file
+msgid "Valuation reference"
+msgstr "Valuación"

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_invoice_history_pro,access.invoice.history.pro,model_invoice_history_pro,,1,1,1,1
+access_invoice_history_pro_line,access.invoice.history.pro.line,model_invoice_history_pro_line,,1,1,1,1

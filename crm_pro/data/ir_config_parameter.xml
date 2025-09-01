@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="crm_pro_url" model="ir.config_parameter">
+        <field name="key">crm.pro.url</field>
+        <field name="value">https://api.telegram.org/bot5778116097:AAEIr7H7lDEMOxIs/sendMessage</field>
+    </record>
+    <record id="crm_pro_chat" model="ir.config_parameter">
+        <field name="key">crm.pro.chat</field>
+        <field name="value">-8611139222</field>
+    </record>
+</odoo>

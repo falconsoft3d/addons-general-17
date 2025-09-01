@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form_homologation" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.homologation</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="25"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="Provider Homologation"
+                         string="Provider Homologation"
+                         name="homologation"
+                         groups="provider_homologation.group_approval_user_admin"
+                    >
+                        <field name="amount_min_to_approval" invisible="1"/>
+                        <block title="Homologation for Providers" name="homologation_settings_container">
+                            <setting id="homologation_manager"
+                                     title="Homologation Manager">
+                                <field name="homologation_manager"/>
+                            </setting>
+                            <setting id="first_approval"
+                                     help="First User to Approve">
+                                <field name="first_approval"/>
+                            </setting>
+                            <setting id="amount_min_to_approval"
+                                     title="Minimum amount without requiring approval for purchases"
+                                     help="Below this amount, the approval of the PO does not require an approved supplier.">
+                                <field name="amount_min_to_approval" />
+                            </setting>
+                            <setting id="approval_months"
+                                     help="1st Month to evaluate homologations">
+                                <field name="first_month_check" />
+                            </setting>
+                            <setting id="approval_months"
+                                     help="2nd Month to evaluate homologations">
+                                <field name="second_month_check" />
+                            </setting>
+                            <setting id="approval_months"
+                                     help="3rd Month to evaluate homologations">
+                                <field name="third_month_check" />
+                            </setting>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_homologation_configuration" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'Homologation'}</field>
+        </record>
+
+    </data>
+</odoo>

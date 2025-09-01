@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+        <record id="import_account_move_view_tree" model="ir.ui.view">
+            <field name="name">import.account.move.view.tree</field>
+            <field name="model">import.account.move</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="active"/>
+                    <field name="company_id"/>
+                    <field name="journal_id"/>
+                    <field name="position"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="import_account_move_view_form" model="ir.ui.view">
+            <field name="name">import.account.move.view.form</field>
+            <field name="model">import.account.move</field>
+            <field name="arch" type="xml">
+              <form>
+                <header>
+
+                    <button name="action_import" type="object"
+                        string="Import" class="oe_highlight"
+                        invisible="active == False"
+                    />
+
+                    <field name="state" widget="statusbar"/>
+
+                </header>
+                <sheet>
+                    <group name="data">
+                        <group name="left">
+                             <field name="name"/>
+                             <field name="steep"/>
+                             <field name="company_id"/>
+                             <field name="journal_id"/>
+                             <field name="active"/>
+                        </group>
+                        <group name="right">
+                            <field name="position"/>
+                            <field name="file" filename="file_name"/>
+                            <field name="file_name" invisible="1"/>
+                            <field name="type"/>
+                        </group>
+                    </group>
+                </sheet>
+              </form>
+            </field>
+        </record>
+
+        <record id="import_account_move_view_action" model="ir.actions.act_window">
+            <field name="name">Account Move Import</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">import.account.move</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem id="import_account_move_view_menu"
+                name="Account Move Import"
+                parent="base.menu_administration"
+                action="import_account_move_view_action"
+                sequence="100"/>
+    </data>
+</odoo>

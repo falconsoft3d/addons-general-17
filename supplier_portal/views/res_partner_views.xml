@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_inherit_hr_res_partner_supplier_form" model="ir.ui.view">
+        <field name="name">view.inherit.hr.res.partner.supplier.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="Supplier Portal">
+                    <group>
+                        <group>
+                            <field name="supplier_password"/>
+                            <field name="active_login"/>
+                            <field name="token" readonly="1"/>
+                            <field name="last_password_update" readonly="1"/>
+                            <field name="last_token_update" readonly="1"/>
+                        </group>
+                        <group>
+                            <button name="action_create_password"
+                                    icon="fa-key"
+                                    type="object" string="Create Password"/>
+
+                            <button name="action_send_email"
+                                    icon="fa-envelope"
+                                    type="object" string="Send Email" class="oe_highlight"/>
+
+                            <button name="generate_token"
+                                    icon="fa-key"
+                                    type="object" string="Generate Token"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

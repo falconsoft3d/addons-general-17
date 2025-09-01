@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="project_todo.menu_todo_todos" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('menu_project_todo.group_project_todo_menu')])]"/>
+    </record>
+</odoo>

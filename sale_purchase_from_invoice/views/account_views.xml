@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">invoice.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <button name="preview_invoice" position="after">
+                <field name="invoice_to_po" invisible="1"/>
+                <field name="invoice_to_so" invisible="1"/>
+                <field name="order_created" invisible="1"/>
+                <button name="%(action_generate_order)d"
+                        groups="sale_purchase_from_invoice.create_budget_from_invoice"
+                        type="action" string="Crear Pedido"/>
+            </button>
+            <field name="invoice_user_id" position="before">
+                <field name="sale_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+</odoo>

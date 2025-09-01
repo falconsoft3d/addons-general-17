@@ -1,0 +1,25 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* menu_employee
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-16 08:40+0000\n"
+"PO-Revision-Date: 2024-07-16 10:40+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: menu_employee
+#: model:ir.module.category,description:menu_employee.employee_category
+#: model:ir.module.category,name:menu_employee.employee_category
+#: model:res.groups,name:menu_employee.group_user_employee_menu
+msgid "Employee"
+msgstr "Empleado"

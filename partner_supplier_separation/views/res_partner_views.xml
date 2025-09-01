@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="partner_rank_form_view" model="ir.ui.view">
+            <field name="name">machine.vending.view.partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='function']" position="before">
+                    <field name="customer_rank" invisible="1"/>
+                    <field name="supplier_rank" invisible="1"/>
+                    <field name="customer" invisible="parent_id != False"/>
+                    <field name="supplier" invisible="parent_id != False"/>
+                    <field name="creditor" invisible="parent_id != False"/>
+                    <!--<button name="associate_ranks"
+                                    type="object"
+                                    class="oe_highlight"
+                                    string="Rangos"
+                                    />-->
+                </xpath>
+            </field>
+        </record>
+
+         <record id="res_partner_view_search_inherit" model="ir.ui.view">
+            <field name="name">res.partner.search.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='inactive']" position="before">
+                   <filter string="Clientes" name="customer" domain="[('customer','=', True)]"/>
+                   <filter string="Proveedores" name="supplier" domain="[('supplier','=', True)]"/>
+                    <filter string="Acreedores" name="creditor" domain="[('creditor','=', True)]"/>
+                   <separator/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

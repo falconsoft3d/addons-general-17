@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+            name="Brands"
+            id="menu_product_brand"
+            action="action_product_brand"
+            sequence="91"
+            parent="sale.prod_config_main"/>
+
+    <menuitem
+            name="Models"
+            id="menu_product_model"
+            action="action_product_model"
+            sequence="92"
+            parent="sale.prod_config_main"/>
+
+    <menuitem
+            name="Serials"
+            id="menu_product_serial"
+            action="action_product_serial"
+            sequence="93"
+            parent="sale.prod_config_main"/>
+</odoo>

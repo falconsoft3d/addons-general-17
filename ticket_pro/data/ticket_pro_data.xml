@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ticket_proc_01" model="ticket.category">
+            <field name="name">Servidor</field>
+            <field name="email">soporte@bim20.com</field>
+        </record>
+
+        <record id="user_task_00" model="user.task">
+            <field name="name">Todos</field>
+        </record>
+
+    </data>
+</odoo>

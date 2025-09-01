@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="res_user_inherit_form" model="ir.ui.view">
+    <field name="name">User form acccess inherit</field>
+    <field name="model">res.users</field>
+    <field name="inherit_id" ref="base.view_users_form"/>
+    <field name="arch" type="xml">
+      <page name="access_rights" position="inside">
+        <group name="products_partners_access">
+          <group string="Accesos a Productos">
+            <field name="product_access" />
+          </group>
+        </group>
+      </page>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+    <record id="view_form_res_payment_document" model="ir.ui.view">
+         <field name="name">view.form.res.payment.document</field>
+         <field name="model">res.payment.document</field>
+         <field name="arch" type="xml">
+            <form string="Payment Document">
+              <sheet>
+                  <group>
+                      <group>
+                          <field name="name"/>
+                       </group>
+                      <group>
+                          <field name="code"/>
+                       </group>
+                  </group>
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_res_payment_document" model="ir.ui.view">
+         <field name="name">view.tree.res.payment.document</field>
+         <field name="model">res.payment.document</field>
+         <field name="arch" type="xml">
+            <tree >
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_res_payment_document" model="ir.actions.act_window">
+        <field name="name">Payment Document</field>
+        <field name="res_model">res.payment.document</field>
+        <field name="view_id" ref="view_tree_res_payment_document"/>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Create a new Payment Document</p>
+       </field>
+    </record>
+
+    <menuitem id="menu_res_payment_document"
+        name="Payment Document"
+        parent="account.menu_account_config"
+        sequence="20"
+        action="action_res_payment_document" />
+     </data>
+</odoo>

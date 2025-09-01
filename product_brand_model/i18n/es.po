@@ -1,0 +1,160 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_brand_model
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-30 06:23+0000\n"
+"PO-Revision-Date: 2023-10-30 07:25+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__brand_id
+#: model:ir.model.fields,field_description:product_brand_model.field_product_product__product_brand_id
+#: model:ir.model.fields,field_description:product_brand_model.field_product_template__product_brand_id
+#: model_terms:ir.ui.view,arch_db:product_brand_model.product_template_form_brand_add
+#: model_terms:ir.ui.view,arch_db:product_brand_model.view_product_template_kanban_brand
+#: model_terms:ir.ui.view,arch_db:product_brand_model.view_product_template_search_brand
+msgid "Brand"
+msgstr "Marca"
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_product__model_id
+#: model:ir.model.fields,field_description:product_brand_model.field_product_template__model_id
+msgid "Brand Model"
+msgstr "Modelo"
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__name
+msgid "Brand Name"
+msgstr "Nombre de Marca"
+
+#. module: product_brand_model
+#: model:ir.actions.act_window,name:product_brand_model.action_product_brand
+#: model:ir.ui.menu,name:product_brand_model.menu_product_brand
+msgid "Brands"
+msgstr "Marcas"
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__create_uid
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__create_date
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__description
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__description
+#: model_terms:ir.ui.view,arch_db:product_brand_model.view_product_brand_form
+#: model_terms:ir.ui.view,arch_db:product_brand_model.view_product_model_form_model
+msgid "Description"
+msgstr ""
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__display_name
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__id
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__id
+msgid "ID"
+msgstr ""
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__write_uid
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__write_date
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__logo
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__logo
+msgid "Logo File"
+msgstr "Fichero de Logo"
+
+#. module: product_brand_model
+#: model:ir.actions.act_window,name:product_brand_model.action_product_model
+#: model_terms:ir.ui.view,arch_db:product_brand_model.product_template_form_brand_add
+#: model_terms:ir.ui.view,arch_db:product_brand_model.view_product_template_kanban_brand
+msgid "Model"
+msgstr "Modelo"
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_model__name
+msgid "Model Name"
+msgstr "Nombre del Modelo"
+
+#. module: product_brand_model
+#: model:ir.ui.menu,name:product_brand_model.menu_product_model
+msgid "Models"
+msgstr "Modelos"
+
+#. module: product_brand_model
+#: model_terms:ir.ui.view,arch_db:product_brand_model.view_product_brand_form
+msgid "Name of brand"
+msgstr "Nombre de Marca"
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__products_count
+msgid "Number of Products"
+msgstr ""
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: product_brand_model
+#: model:ir.model,name:product_brand_model.model_product_template
+msgid "Product"
+msgstr "Producto"
+
+#. module: product_brand_model
+#: model:ir.model,name:product_brand_model.model_product_brand
+#: model_terms:ir.ui.view,arch_db:product_brand_model.view_product_brand_form
+#: model_terms:ir.ui.view,arch_db:product_brand_model.view_product_brand_tree
+msgid "Product Brand"
+msgstr "Marca"
+
+#. module: product_brand_model
+#: model:ir.model,name:product_brand_model.model_product_model
+msgid "Product Brand Model"
+msgstr "Model"
+
+#. module: product_brand_model
+#: model:ir.model.fields,field_description:product_brand_model.field_product_brand__product_ids
+msgid "Products in this Brand"
+msgstr "Productos en esta Marca"
+
+#. module: product_brand_model
+#: model:ir.model.fields,help:product_brand_model.field_product_product__product_brand_id
+#: model:ir.model.fields,help:product_brand_model.field_product_template__product_brand_id
+msgid "Select a brand for this product."
+msgstr "Seleccione una marca a este producto"
+
+#. module: product_brand_model
+#: model:ir.model.fields,help:product_brand_model.field_product_brand__partner_id
+msgid "Select a partner for this brand if any."
+msgstr ""

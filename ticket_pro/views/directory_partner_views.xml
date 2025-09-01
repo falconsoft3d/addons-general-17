@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="directory_partner_view_tree" model="ir.ui.view">
+            <field name="name">directory.partner.view.tree</field>
+            <field name="model">directory.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Notas">
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="cargo"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="directory_partner_view_form" model="ir.ui.view">
+            <field name="name">directory.partner.view.form</field>
+            <field name="model">directory.partner</field>
+            <field name="arch" type="xml">
+                <form string="Notas">
+                    <sheet>
+                        <!--
+                        <div class="oe_button_box" name="button_box">
+                            <button name="view_tickets"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-pencil"
+                                    invisible="ticket_count == 0">
+                                <div class="o_field_widget o_stat_info">
+                                    <field name="ticket_count"/>
+                                    <span class="o_stat_text">Tickets</span>
+                                </div>
+                            </button>
+                        </div>
+                        -->
+                        <label for="name"/>
+                        <div class="oe_title">
+                           <h1>
+                               <field name="name"/>
+                           </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="phone"/>
+                                <field name="email"/>
+                            </group>
+                            <group>
+                                <field name="cargo"/>
+                                <field name="partner_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="directory_partner_action" model="ir.actions.act_window">
+            <field name="name">Contactos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">directory.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_data" name="Datos" parent="ticket_pro.ticket_menu_main" sequence="15"/>
+
+        <menuitem id="directory_partner_act" name="Datos de Contacto" parent="menu_data"
+                  action="directory_partner_action"/>
+    </data>
+</odoo>

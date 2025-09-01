@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="crm_lead_pro_form" model="ir.ui.view">
+            <field name="name">crm.lead.pro.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="date_contact"/>
+                    <field name="numer_days_contact"/>
+                </xpath>
+            </field>
+        </record>
+
+
+       <record id="crm_lead_pro_tree" model="ir.ui.view">
+            <field name="name">crm.lead.pro.tree</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='stage_id']" position="after">
+                    <field name="date_contact"/>
+                    <field name="numer_days_contact"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

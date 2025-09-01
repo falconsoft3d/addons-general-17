@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* picking_reference_required
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240827\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-10 17:59+0000\n"
+"PO-Revision-Date: 2024-12-10 17:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: picking_reference_required
+#: model:ir.model.fields,field_description:picking_reference_required.field_stock_picking__guide_reference
+msgid "Guide reference"
+msgstr "Guia de Factura No."
+
+#. module: picking_reference_required
+#. odoo-python
+#: code:addons/picking_reference_required/models/stock_picking.py:0
+#, python-format
+msgid "The reference guide is mandatory in this type of picking."
+msgstr "La guía de referencia es obligatoria en este tipo de Albaran."
+
+#. module: picking_reference_required
+#: model:ir.model,name:picking_reference_required.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"

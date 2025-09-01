@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_homologation_process_form" model="ir.ui.view">
+        <field name="name">homologation.process.form</field>
+        <field name="model">homologation.process</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_validate_process"
+                            string="Validate Process"
+                            type="object"
+                            invisible="state == 'active'"
+                            groups="provider_homologation.group_approval_user_admin"
+                            class="btn-secondary"/>
+                    <button name="action_reject_process"
+                            string="Reject Process"
+                            invisible="state in ('draft', 'rejected', 'archive')"
+                            groups="provider_homologation.group_approval_user_admin"
+                            type="object" class="btn-danger"/>
+                    <button name="action_draft"
+                            string="Return to Draft"
+                            invisible="state == 'draft'"
+                            groups="provider_homologation.group_approval_user_admin"
+                            type="object" class="btn-primary"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1" class="oe_title"/>
+                            <field name="partner_approval_id"/>
+                            <field name="approval_manager_id"/>
+                        </group>
+                        <group>
+                            <field name="start_date" readonly="1"/>
+                            <field name="end_date" readonly="1"/>
+                            <field name="validation_date" readonly="1"/>
+                            <field name="template_loaded" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Template Approval">
+                        <group>
+                            <field name="homologation_template_id"
+                                   readonly="template_loaded or state != 'draft'"
+                                   />
+                        </group>
+                        <div class="col-6">
+                            <button name="action_load_template_fields" type="object"
+                                    string="Select Template"
+                                    class="oe_highlight"
+                                    invisible="template_loaded or state == 'active'"/>
+                            <button name="action_reload_template" type="object"
+                                    string="Change Template"
+                                    class="btn-warning"
+                                    invisible="template_loaded == False or state in ('draft', 'rejected', 'archive')"/>
+                        </div>
+                    </group>
+                    <notebook>
+                        <page string="Required Data">
+                            <field name="line_data_ids"  nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name" readonly="1"/>
+                                    <field name="field_type" readonly="1"/>
+                                    <field name="required" readonly="1"/>
+                                    <field name="category" readonly="1"/>
+                                    <field name="value_char"   invisible="field_type != 'char'"/>
+                                    <field name="value_number" invisible="field_type != 'number'"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Required Documents">
+                            <field name="line_document_ids"  nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name" readonly="1"/>
+                                    <field name="field_type" readonly="1"/>
+                                    <field name="required" readonly="1"/>
+                                    <field name="category" readonly="1"/>
+                                    <field name="value_binary"
+                                           widget="binary"
+                                           filename="filename_binary"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_homologation_process_tree" model="ir.ui.view">
+        <field name="name">homologation.process.tree</field>
+        <field name="model">homologation.process</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="partner_approval_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_homologation_process" model="ir.actions.act_window">
+        <field name="name">Homologation Processes</field>
+        <field name="res_model">homologation.process</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

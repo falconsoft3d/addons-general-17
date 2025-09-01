@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ticket_link_view_tree" model="ir.ui.view">
+            <field name="name">ticket.link.view.tree</field>
+            <field name="model">ticket.link</field>
+            <field name="arch" type="xml">
+                <tree string="Link">
+                    <field name="name"/>
+                    <field name="link"  widget="url"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ticket_link_view_form" model="ir.ui.view">
+            <field name="name">ticket.link.view.form</field>
+            <field name="model">ticket.link</field>
+            <field name="arch" type="xml">
+                <form string="Links">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" requiered="True"/>
+                            </group>
+                            <group>
+                                <field name="link" requiered="True" widget="url"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ticket_link_action" model="ir.actions.act_window">
+            <field name="name">Links</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ticket.link</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="ticket_link_main" name="Links" parent="ticket_pro.ticket_menu_main" sequence="15"/>
+        <menuitem id="ticket_link_act" name="Links" parent="ticket_link_main" action="ticket_link_action"/>
+    </data>
+</odoo>

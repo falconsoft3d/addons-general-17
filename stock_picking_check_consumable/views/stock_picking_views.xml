@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista de picking form para mostrar la columna "Consumible" en las lineas -->
+    <record id="view_picking_form_inherit_consume" model="ir.ui.view">
+        <field name="name">stock.picking.form.consume</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <!-- Botón contextual para generar albarán de salida si no se ha generado -->
+                <field name="not_required_out_picking" invisible="1"/>
+                <button name="action_create_out_picking_consume"
+                        string="Generar Albarán de Salida (Consumibles)"
+                        type="object"
+                        invisible="not_required_out_picking"/>
+            </xpath>
+
+            <xpath expr="//notebook" position="before">
+                <group string="Salida Automática de Consumibles" invisible="consume_out_picking_id == False">
+                    <field name="consume_out_picking_id" />
+                </group>
+            </xpath>
+
+            <!-- Botón boolean para consumible -->
+            <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='product_id']" position="after">
+                <field name="check_consume"
+                       optional="hide"
+                       widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

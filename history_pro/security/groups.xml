@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="history_pro_group" model="res.groups">
+        <field name="name">History Pro</field>
+    </record>
+</odoo>

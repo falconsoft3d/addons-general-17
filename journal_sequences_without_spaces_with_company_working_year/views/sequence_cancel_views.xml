@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sequence_cancel_view_form" model="ir.ui.view">
+            <field name="name">sequence.cancel.view.form</field>
+            <field name="model">sequence.cancel</field>
+            <field name="inherit_id" ref="journal_sequences_without_spaces.sequence_cancel_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sequence_cancel_line_ids']/tree/field[@name='name']" position="after">
+                   <field name="company_working_year_id" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>

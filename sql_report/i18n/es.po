@@ -1,0 +1,250 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sql_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-08 16:05+0000\n"
+"PO-Revision-Date: 2023-05-08 18:06+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,help:sql_report.field_sql_report__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: sql_report
+#: model:res.groups,name:sql_report.group_sql_report_sql
+msgid "Generar reporte SQL"
+msgstr ""
+
+#. module: sql_report
+#: model_terms:ir.ui.view,arch_db:sql_report.view_sql_report_form
+msgid "Generate CSV"
+msgstr "Generar Reporte CSV"
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__id
+msgid "ID"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,help:sql_report.field_sql_report__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,help:sql_report.field_sql_report__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,help:sql_report.field_sql_report__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__name
+msgid "Number"
+msgstr "Código"
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,help:sql_report.field_sql_report__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,help:sql_report.field_sql_report__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model,name:sql_report.model_sql_report
+msgid "Reporte SQL"
+msgstr "Reporte SQL"
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: sql_report
+#: model_terms:ir.ui.view,arch_db:sql_report.view_sql_report_form
+msgid "SELECT * FROM res_partner"
+msgstr ""
+
+#. module: sql_report
+#: model:ir.actions.act_window,name:sql_report.action_sql_report
+#: model:ir.ui.menu,name:sql_report.menu_sql_report_root
+#: model:ir.ui.menu,name:sql_report.menu_sql_report_view
+#: model:ir.ui.menu,name:sql_report.sql_report_menu_main
+msgid "SQL Report"
+msgstr "Reportes SQL"
+
+#. module: sql_report
+#: model:ir.model.fields,field_description:sql_report.field_sql_report__select_sql
+msgid "SQL statement"
+msgstr "Consulta SQL"
+
+#. module: sql_report
+#: model:ir.model.fields,help:sql_report.field_sql_report__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: sql_report
+#: model:ir.model.fields,help:sql_report.field_sql_report__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""

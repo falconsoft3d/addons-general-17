@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+
+    <menuitem id="menu_employee_courses"
+        name="Employee Courses"
+        sequence="40"
+        groups="employee_courses.employee_courses_manager_group"
+        web_icon="employee_courses,static/description/icon.png">
+
+                <menuitem id="menu_employee_courses2"
+                        name="Courses"
+                        sequence="10">
+
+                       <menuitem id="menu_employee_courses_son_2"
+                                            name="Courses"
+                                            sequence="10"
+                                            action="action_employee_courses"/>
+
+
+
+                       <menuitem id="menu_employee_courses_son_course_taken"
+                                            name="Course Taken"
+                                            sequence="20"
+                                            action="action_course_taken"/>
+
+
+                </menuitem>
+    </menuitem>
+
+
+     </data>
+</odoo>

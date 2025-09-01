@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="appointment.main_menu_appointments" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('menu_appointment.group_user_appointment_menu')])]"/>
+    </record>
+</odoo>

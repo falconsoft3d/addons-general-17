@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <record id="sign.menu_document" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('menu_sign_documents.group_user_sign_documents_menu')])]"/>
+    </record>
+</odoo>

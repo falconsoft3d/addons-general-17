@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="planning_category" model="ir.module.category">
+            <field name="name">Planning</field>
+            <field name="description">Planning</field>
+            <field name="sequence" eval="90"/>
+        </record>
+
+        <record id="group_user_planning" model="res.groups">
+            <field name="name">User planning</field>
+            <field name="category_id" ref="planning_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+</odoo>

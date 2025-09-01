@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <data>
+
+        <record id="view_close_accounting_entries" model="ir.ui.view">
+            <field name="name">close.accounting.entries</field>
+            <field name="model">account.close.accounting.entries</field>
+            <field name="arch" type="xml">
+                <form>
+                   <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="date_to"/>
+                            <field name="lock_stock"/>
+                            <field name="lock_accounting"/>
+                        </group>
+                       <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                       </group>
+                    </sheet>
+                     <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                     </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_close_accounting_entries_tree" model="ir.ui.view">
+            <field name="name">close.accounting.entries.tree</field>
+            <field name="model">account.close.accounting.entries</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date_to"/>
+                    <field name="lock_stock"/>
+                    <field name="lock_accounting"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_close_accounting_entries" model="ir.actions.act_window">
+            <field name="name">Lock Periods</field>
+            <field name="res_model">account.close.accounting.entries</field>
+            <field name="view_id" ref="view_close_accounting_entries_tree"/>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                    <p class="oe_view_nocontent_create">
+                    Create a new record!</p>
+            </field>
+        </record>
+
+        <record model="ir.rule" id="lock_asstes_multi_company">
+            <field name="name">Lock Assets multi-company</field>
+            <field name="model_id" ref="model_account_close_accounting_entries"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <menuitem id="menu_main_close_accounting_entries"
+                  name="Lock Period"
+                  parent="account.account_account_menu"
+                  sequence="3"
+                  groups="close_accounting_entries.group_close_accounting_entries"
+                  action="action_close_accounting_entries"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* picking_supplier_reference
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 09:02+0000\n"
+"PO-Revision-Date: 2024-04-22 09:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: picking_supplier_reference
+#: model:ir.model.fields,field_description:picking_supplier_reference.field_stock_picking__supplier_reference
+msgid "Supplier Reference"
+msgstr "Referencia del proveedor"
+
+#. module: picking_supplier_reference
+#: model:ir.model,name:picking_supplier_reference.model_stock_picking
+msgid "Transfer"
+msgstr ""

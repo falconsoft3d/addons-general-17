@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+
+    <menuitem id="menu_crm_pro"
+        name="Crm Pro"
+        sequence="40"
+        web_icon="crm_pro,static/description/icon.png">
+
+                <menuitem id="menu_crm_pro_config"
+                        name="Config"
+                        sequence="10">
+
+                       <menuitem id="menu_menu_crm_pro_info"
+                                            name="Crm Information"
+                                            sequence="10"
+                                            action="action_crm_pro_info"/>
+
+                </menuitem>
+    </menuitem>
+
+
+     </data>
+</odoo>

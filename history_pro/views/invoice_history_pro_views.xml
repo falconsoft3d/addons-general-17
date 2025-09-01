@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+    <record id="view_form_invoice_history_pro" model="ir.ui.view">
+         <field name="name">view.form.invoice_history_pro</field>
+         <field name="model">invoice.history.pro</field>
+         <field name="arch" type="xml">
+            <form string="Invoice History">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+              <sheet>
+                  <div class="oe_title">
+                           <h1>
+                               <field name="name"/>
+
+                           </h1>
+                       </div>
+
+                  <group>
+                      <group>
+                          <field name="partner_id"/>
+                          <field name="user_id"/>
+                          <field name="currency_id"/>
+                          <field name="type"/>
+                        </group>
+                        <group>
+                          <field name="invoice_date"/>
+                          <field name="date"/>
+                          <field name="old_id"/>
+                          <field name="company_id"/>
+                       </group>
+                  </group>
+
+
+                  <notebook>
+                      <page string="Invoice Line">
+                          <field name="invoice_line_ids" nolabel="1" widget="one2many_list">
+                              <tree string="Invoice Line" editable="bottom">
+                                  <field name="name" optional="show"/>
+                                  <field name="quantity" optional="show" sum="sum"/>
+                                  <field name="price_unit" optional="show"/>
+                                  <field name="discount" optional="show"/>
+                                  <field name="amount_untaxed" optional="show" sum="sum"/>
+                                  <field name="amount_tax" optional="show" sum="sum"/>
+                                  <field name="amount_total" optional="show" sum="sum"/>
+                              </tree>
+                          </field>
+                      </page>
+                    </notebook>
+
+
+               <br/>
+
+               <group col="12">
+                        <group colspan="8">
+                            <field name="narration" placeholder="Terms and Conditions" colspan="2" nolabel="1"/>
+                        </group>
+                        <group colspan="4">
+                            <group class="oe_subtotal_footer">
+                                <field name="amount_untaxed" />
+                                <field name="amount_tax" />
+                                <field name="amount_total" />
+                            </group>
+                        </group>
+               </group>
+
+
+               </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_invoice_history_pro" model="ir.ui.view">
+         <field name="name">view.tree.invoice.history.pro</field>
+         <field name="model">invoice.history.pro</field>
+         <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="partner_id" optional="show"/>
+                <field name="user_id" optional="show"/>
+                <field name="currency_id" optional="show"/>
+
+                <field name="invoice_date" optional="show"/>
+                <field name="date" optional="show"/>
+                <field name="old_id" optional="show"/>
+                <field name="type" optional="show"/>
+
+                <field name="amount_untaxed" optional="show" sum="sum"/>
+                <field name="amount_tax" optional="show" sum="sum"/>
+                <field name="amount_total" optional="show" sum="sum"/>
+
+                <field name="company_id" optional="show"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_tree_invoice_history_line_pro" model="ir.ui.view">
+         <field name="name">view.tree.invoice.history.line.pro</field>
+         <field name="model">invoice.history.pro.line</field>
+         <field name="arch" type="xml">
+            <tree>
+                <field name="invoice_id" optional="show"/>
+                <field name="date" optional="show"/>
+                <field name="partner_id" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="quantity" optional="show" sum="sum"/>
+                <field name="price_unit" optional="show"/>
+                <field name="discount" optional="show"/>
+                <field name="amount_untaxed" optional="show" sum="sum"/>
+                <field name="amount_tax" optional="show" sum="sum"/>
+                <field name="amount_total" optional="show" sum="sum"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- action invoice line -->
+    <record id="action_invoice_line_history_pro" model="ir.actions.act_window">
+        <field name="name">Invoice Line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">invoice.history.pro.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_invoice_history_line_pro"/>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new register!
+              </p>
+        </field>
+    </record>
+
+
+    <!-- action for sale invoice -->
+    <record id="action_sale_invoice_history_pro" model="ir.actions.act_window">
+        <field name="name">Sale Invoice</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">invoice.history.pro</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_invoice_history_pro"/>
+        <field name="domain">[('type', 'in', ['out_invoice', 'out_refund'])]</field>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new register!
+              </p>
+        </field>
+    </record>
+
+
+    <!-- action for purchase invoice -->
+    <record id="action_purchase_invoice_history_pro" model="ir.actions.act_window">
+        <field name="name">Purchase Invoice</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">invoice.history.pro</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_invoice_history_pro"/>
+        <field name="domain">[('type', 'in', ['in_invoice', 'in_refund'])]</field>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new register!
+              </p>
+        </field>
+    </record>
+
+    <!-- action other -->
+    <record id="action_other_history_pro" model="ir.actions.act_window">
+        <field name="name">Other</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">invoice.history.pro</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_invoice_history_pro"/>
+        <field name="domain">[('type', 'in', ['other'])]</field>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new register!
+              </p>
+        </field>
+    </record>
+
+
+    <!-- action other -->
+    <record id="action_all_history_pro" model="ir.actions.act_window">
+        <field name="name">All</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">invoice.history.pro</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_invoice_history_pro"/>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new register!
+              </p>
+        </field>
+    </record>
+
+     </data>
+</odoo>

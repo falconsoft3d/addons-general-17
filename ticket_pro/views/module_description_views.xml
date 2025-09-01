@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_module_description" model="ir.ui.view">
+        <field name="name">view.form.module.description</field>
+        <field name="model">module.description</field>
+        <field name="arch" type="xml">
+            <form string="Descripción de módulos">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="module_id" required="1" options='{"no_create": 1, "no_open": 1}'/>
+                        </group>
+                        <group>
+                            <field name="category_id" required="1" options='{"no_create": 1, "no_open": 1}'
+                                   placeholder="Seleccione una categoría (Ventas, Compras)"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name="Description" string="Descripción">
+                            <field name="description" required="1"
+                                   widget="html"
+                                   placeholder="Agregue notas..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_module_description" model="ir.ui.view">
+        <field name="name">view.tree.module.descriptiono</field>
+        <field name="model">module.description</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="module_id"/>
+                <field name="category_id" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ticket.pro search view -->
+    <record id="module_description_view_search" model="ir.ui.view">
+        <field name="name">module.description.view.search</field>
+        <field name="model">module.description</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="module_id"/>
+                <field name="category_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_module_description" model="ir.actions.act_window">
+        <field name="name">Módulos</field>
+        <field name="res_model">module.description</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_module_description"/>
+    </record>
+
+    <menuitem id="menu_module_description"
+              name="Módulos"
+              parent="ticket_pro.menu_ticket_2"
+              sequence="30"
+              action="action_module_description"/>
+
+</odoo>

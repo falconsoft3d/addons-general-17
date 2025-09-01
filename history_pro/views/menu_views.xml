@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+        <menuitem id="menu_history_pro"
+            name="History Pro"
+            sequence="40"
+            groups="history_pro.history_pro_group"
+            web_icon="history_pro,static/description/icon.png">
+
+                    <menuitem id="menu_history_pro_son"
+                            name="History Pro"
+                            sequence="10">
+
+                           <menuitem id="menu_history_pro_invoice_sale"
+                                                name="Sale Invoice"
+                                                sequence="10"
+                                                action="action_sale_invoice_history_pro"/>
+
+
+                           <menuitem id="menu_purchase_invoice_history_pro"
+                                                name="Purchase Invoice"
+                                                sequence="20"
+                                                action="action_purchase_invoice_history_pro"/>
+
+
+                         <menuitem id="menu_other_invoice_history_pro"
+                                                name="Other Account Move"
+                                                sequence="30"
+                                                action="action_other_history_pro"/>
+
+                         <menuitem id="menu_all_invoice_history_pro"
+                                                name="All"
+                                                sequence="40"
+                                                action="action_all_history_pro"/>
+
+                         <menuitem id="menu_invoice_line_history_pro"
+                                                name="Invoice Line"
+                                                sequence="50"
+                                                action="action_invoice_line_history_pro"/>
+
+                    </menuitem>
+        </menuitem>
+     </data>
+</odoo>

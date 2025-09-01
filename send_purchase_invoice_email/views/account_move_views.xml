@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_move_email_form_inherit" model="ir.ui.view">
+            <field name="name">account.move.email.form.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_cancel']" position="after">
+                    <button name="send_purchase_invoice"
+                            icon ="fa-envelope"
+                            type="object" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

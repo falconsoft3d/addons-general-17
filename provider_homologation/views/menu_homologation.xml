@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem
+                id="provider_homologation_menu"
+                name="Provider Homologation"
+                web_icon="provider_homologation,static/description/icon.png"/>
+
+        <menuitem id="provider_homologation_menu_configuration"
+                  name="Configuration"
+                  parent="provider_homologation_menu"
+                  sequence="10"/>
+
+        <menuitem id="provider_homologation_menu_configuration_templates"
+                  name="Homologation Templates"
+                  parent="provider_homologation_menu_configuration"
+                  action="action_homologation_template"
+                  sequence="10"/>
+
+        <menuitem id="provider_homologation_menu_process"
+                  name="Homologation Process"
+                  parent="provider_homologation_menu"
+                  action="action_homologation_process"
+                  sequence="10"/>
+
+        <menuitem id="provider_homologation_settings"
+                  name="Settings"
+                  parent="provider_homologation_menu_configuration"
+                  action="action_homologation_configuration"
+                  groups="base.group_system"/>
+
+    </data>
+</odoo>

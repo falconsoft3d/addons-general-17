@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ticket_pro.ListController" t-inherit="web.ListView" t-inherit-mode="primary" owl="1">
+        <xpath expr="//div[contains(@class, 'o_list_view')]" position="inside">
+            <div class="o_ticket_dashboard_container" t-ref="root"/>
+        </xpath>
+    </t>
+</templates> 

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_homologation" model="ir.ui.view">
+        <field name="name">res.partner.form.homologation</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="contrat_homologation"/>
+                <field name="etica_homologation"/>
+            </xpath>
+
+            <xpath expr="//button[@name='create_company']" position="after">
+                <button name="action_request_homologation"
+                        type="object"
+                        class="btn-primary"
+                        icon="fa-user-plus"
+                        invisible="homologation_state == 'active' or request_homologation"
+                        string="Request Homologation"
+                />
+                <span invisible="homologation_state in ('draft', 'requested', 'inactive')">Homologado</span>
+                <field name="is_homologated" invisible="1"/>
+                <img src="/provider_homologation/static/description/aprobado.png"
+                     invisible="homologation_state in ('draft', 'requested', 'inactive')"
+                     style="width: 50px; height: 50px;position: relative; top: 18px;"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Homologación">
+                    <group string="Status">
+                        <group>
+                            <field name="is_homologated"/>
+                            <field name="allow_po_no_check"
+                                   groups="provider_homologation.group_approval_user_admin"
+                                   string="Allow confirmation without Homologation"/>
+                            <field name="request_homologation"/>
+                        </group>
+                        <group>
+                            <field name="homologation_state"/>
+                            <field name="homologation_date"/>
+                        </group>
+                    </group>
+                    <group string="Homologation Logs">
+                        <field name="homologation_process_ids">
+                            <tree string="Homologation Process" readonly="1">
+                                <field name="name"/>
+                                <field name="approval_manager_id"/>
+                                <field name="validation_date"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="Documents">
+                        <field name="line_document_ids">
+                            <tree>
+                                <field name="name" />
+                                <field name="field_type" />
+                                <field name="value_binary" />
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="Data">
+                        <field name="line_data_ids">
+                            <tree>
+                                <field name="name" />
+                                <field name="field_type" />
+                                <field name="value_char" />
+                                <field name="value_number" />
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="res_partner_homologation_provider_filter" model="ir.ui.view">
+        <field name="name">res.partner.homologation_provider_filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="is_homologated"/>
+                <filter string="Homologados" name="homologation_filter"
+                        domain="[('is_homologated', '=', True)]"/>
+                <separator/>
+                <filter string="No Homologados" name="non_homologation_filter"
+                        domain="[('is_homologated', '=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

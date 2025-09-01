@@ -1,0 +1,315 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* close_accounting_entries
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-01 20:45+0000\n"
+"PO-Revision-Date: 2023-11-01 21:46+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: close_accounting_entries
+#: model:ir.model,name:close_accounting_entries.model_account_close_accounting_entries
+msgid "Accounting Lock"
+msgstr "Cierre contable"
+
+#. module: close_accounting_entries
+#: model:res.groups,name:close_accounting_entries.group_close_accounting_entries
+msgid "Accounting Lock Responsible"
+msgstr "Responsable de Cierre Contable"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: close_accounting_entries
+#: model_terms:ir.actions.act_window,help:close_accounting_entries.action_close_accounting_entries
+msgid "Create a new record!"
+msgstr "¡Crea un nuevo registro!"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__display_name
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_move__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__name
+msgid "From"
+msgstr "Desde"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__id
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_move__id
+msgid "ID"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__message_needaction
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__message_has_error
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: close_accounting_entries
+#: code:addons/close_accounting_entries/models/account_move.py:0
+#, python-format
+msgid "It is not possible to change assets in this period because it is blocked!"
+msgstr "No es posible hacer cambios porque el periodo esta bloqueado!"
+
+#. module: close_accounting_entries
+#: code:addons/close_accounting_entries/models/account_move.py:0
+#, python-format
+msgid "It is not possible to create assets in this period because it is blocked!"
+msgstr "No es posible hacer crear un asiento porque el periodo esta bloqueado!"
+
+#. module: close_accounting_entries
+#: code:addons/close_accounting_entries/models/account_move.py:0
+#, python-format
+msgid "It is not possible to modify assets in this period because it is blocked!"
+msgstr "No es posible hacer cambios porque el periodo esta bloqueado!"
+
+#. module: close_accounting_entries
+#: model:ir.model,name:close_accounting_entries.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries____last_update
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_move____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.ui.menu,name:close_accounting_entries.menu_main_close_accounting_entries
+msgid "Lock Period"
+msgstr "Cierre Período"
+
+#. module: close_accounting_entries
+#: model:ir.actions.act_window,name:close_accounting_entries.action_close_accounting_entries
+msgid "Lock Periods"
+msgstr "Cierre Períodos"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__lock_create_asset
+msgid "Not create assets"
+msgstr "No crear registros"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__lock_modify_asset
+msgid "Not modify assets"
+msgstr "No modificar registros"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__activity_user_id
+msgid "Responsible User"
+msgstr "Responsable"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__date_to
+msgid "To"
+msgstr "Hasta"
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:res.groups,comment:close_accounting_entries.group_close_accounting_entries
+msgid "User could close all periods."
+msgstr "El usuario podrá cerrar periodos."
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,field_description:close_accounting_entries.field_account_close_accounting_entries__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: close_accounting_entries
+#: model:ir.model.fields,help:close_accounting_entries.field_account_close_accounting_entries__website_message_ids
+msgid "Website communication history"
+msgstr ""

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="update_product_product_website_img" model="ir.actions.server">
+            <field name="name">Website Imagen - ON/OFF</field>
+            <field name="model_id" ref="product_product_website_published.model_product_product"/>
+            <field name="binding_model_id" ref="product.model_product_product"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">
+            if records:
+                res = records._action_update_website_published()
+            </field>
+    </record>
+</odoo>

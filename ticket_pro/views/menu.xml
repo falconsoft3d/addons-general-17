@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+        <menuitem id="menu_control" name="Control" parent="ticket_menu_main" sequence="80" groups="ticket_pro.tiket_pro_user_group"/>
+        <menuitem id="menu_conf" name="Configuración" parent="ticket_menu_main" sequence="100" groups="ticket_pro.tiket_pro_user_group"/>
+    </data>
+</odoo>

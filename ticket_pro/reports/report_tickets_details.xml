@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+            id="ticket_pro_report"
+            model="ticket.pro.wizard"
+            string="Reporte de Tickets"
+            name="ticket_pro.report_detail_tickets"
+            file="ticket_pro.report_detail_tickets"
+            report_type="qweb-pdf"
+            menu="False"
+        />
+
+
+        <template id="report_detail_tickets">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <div class="page">
+                            <h3 class="text-center">Reporte de Tickets</h3>
+                            <br/>
+                            <t t-foreach="o.tickets_ids" t-as="ticket">
+                                <div class="container">
+                                    <div class="o_div_border">
+                                        <div>
+                                            <strong><span t-esc="ticket.name"/> - <span t-esc="ticket.title"/></strong>
+                                        </div>
+                                        <div>
+                                            <strong><span t-esc="ticket.tproject_state_id.name"/> - <span t-esc="ticket.end_date"/></strong>
+                                        </div>
+                                        <div>
+                                            <strong>Categoría: <span t-esc="ticket.category_id.name"/></strong>
+                                        </div>
+                                        <div>
+                                            <strong>Horas: <span t-esc="ticket.hours"/></strong>
+                                        </div>
+
+                                        <div>
+                                            <strong>Responsable: <span t-esc="ticket.responsible"/></strong>
+                                        </div>
+                                        <div class="o_text_align_justify">
+                                            <strong>Descripción: </strong>
+                                            <span t-raw="ticket.obs"/>
+                                        </div>
+                                        <t t-if="ticket.obs_solucion">
+                                            <div class="o_text_align_justify">
+                                                <strong>Solución: </strong>
+                                                <span t-raw="ticket.obs_solucion"/>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                                <br/>
+                            </t>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        <!-- action -->
+        <record id="act_ticket_pro_report" model="ir.actions.report">
+            <field name="name">Reporte de Tickets</field>
+            <field name="model">ticket.pro.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ticket_pro.report_detail_tickets</field>
+            <field name="report_file">ticket_pro.report_detail_tickets</field>
+            <field name="print_report_name">'Reporte de Tickets'</field>
+            <field name="binding_view_types">form</field>
+            <field name="binding_model_id" ref="model_ticket_pro_wizard"/>
+        </record>
+
+    </data>
+</odoo>

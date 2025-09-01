@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_product_model_form_model" model="ir.ui.view">
+        <field name="name">product.model.form.model</field>
+        <field name="model">product.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="logo" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="brand_id"/>
+                        </group>
+                    </group>
+                        <field name="description" placeholder="Descripción..." nolabel="1" height="50"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_product_model_tree_model" model="ir.ui.view">
+        <field name="name">product.model.tree.model</field>
+        <field name="model">product.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="brand_id"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_product_model">
+        <field name="name">Model</field>
+        <field name="res_model">product.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
