@@ -56,7 +56,7 @@ class CrmPro(http.Controller):
 
 
         if ir_config_parameter_url_id and ir_config_parameter_chat_id:
-            url = ir_config_parameter_id.value
+            url = ir_config_parameter_url_id.value
             chat = ir_config_parameter_chat_id.value
 
             _test = name + "\n" + email + " \n" + phone + " \n" + text + " \n"
