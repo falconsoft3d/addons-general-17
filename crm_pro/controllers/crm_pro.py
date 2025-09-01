@@ -10,6 +10,7 @@ import base64
 from datetime import date
 import logging
 _logger = logging.getLogger(__name__)
+import requests
 
 loader = jinja2.PackageLoader('odoo.addons.crm_pro', 'web')
 env = jinja2.Environment(loader=loader, autoescape=True)
