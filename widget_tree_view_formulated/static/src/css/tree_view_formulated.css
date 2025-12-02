@@ -1,0 +1,11 @@
+/* Estilos para totales formulados */
+.o_list_table tfoot .o_formulated_total {
+    font-weight: bold !important;
+    color: #017e84 !important;
+    background-color: #f0f9ff !important;
+}
+
+.o_list_table tfoot .o_formulated_total::before {
+    content: "⚡ ";
+    font-size: 0.9em;
+}

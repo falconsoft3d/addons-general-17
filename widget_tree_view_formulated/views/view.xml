@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- 
+    ========================================================================
+    WIDGET TREE_FORMULATED - EJEMPLOS DE USO
+    ========================================================================
+    
+    Este archivo contiene solo ejemplos comentados.
+    Para usar el widget en tus propias vistas, sigue estos pasos:
+    
+    1. En tu vista tree, agrega: js_class="tree_formulated"
+    2. En los campos que quieras calcular con fórmulas, usa:
+       options="{'formulated': 'tu_formula_aqui'}"
+    
+    ========================================================================
+    EJEMPLO 1: Vista simple con suma de dos columnas
+    ========================================================================
+    
+    <record id="tu_vista_id" model="ir.ui.view">
+        <field name="name">tu.vista.nombre</field>
+        <field name="model">tu.modelo</field>
+        <field name="arch" type="xml">
+            <tree js_class="tree_formulated">
+                <field name="campo1" sum="Total Campo 1"/>
+                <field name="campo2" sum="Total Campo 2"/>
+                
+                <field name="campo_total" 
+                       options="{'formulated': 'campo1 + campo2'}" 
+                       sum="Total Calculado"/>
+            </tree>
+        </field>
+    </record>
+    
+    ========================================================================
+    EJEMPLO 2: Vista con fórmulas complejas
+    ========================================================================
+    
+    <record id="vista_analisis_id" model="ir.ui.view">
+        <field name="name">vista.analisis</field>
+        <field name="model">tu.modelo</field>
+        <field name="arch" type="xml">
+            <tree js_class="tree_formulated">
+                <field name="fdo_orig" sum="Total FdO Original"/>
+                <field name="cte_orig" sum="Total Cte Original"/>
+                <field name="ajuste_a" sum="Total Ajuste A"/>
+                <field name="ajuste_m" sum="Total Ajuste M"/>
+                
+                <field name="fdo_m" 
+                       options="{'formulated': 'fdo_orig + ajuste_m'}" 
+                       sum="Total FdO-M"/>
+                
+                <field name="cte_m" 
+                       options="{'formulated': 'cte_orig + ajuste_a'}" 
+                       sum="Total Cte-M"/>
+                
+                <field name="resultado" 
+                       options="{'formulated': '(fdo_orig + cte_orig) - (fdo_m + cte_m)'}" 
+                       sum="Resultado Total"/>
+                
+                <field name="porcentaje" 
+                       options="{'formulated': 'fdo_orig > 0 ? (resultado / fdo_orig) * 100 : 0'}" 
+                       sum="% Porcentaje"/>
+            </tree>
+        </field>
+    </record>
+    
+    ========================================================================
+    EJEMPLO 3: Operaciones matemáticas avanzadas
+    ========================================================================
+    
+    <record id="vista_calculos_id" model="ir.ui.view">
+        <field name="name">vista.calculos</field>
+        <field name="model">tu.modelo</field>
+        <field name="arch" type="xml">
+            <tree js_class="tree_formulated">
+                <field name="precio" sum="Total Precio"/>
+                <field name="cantidad" sum="Total Cantidad"/>
+                <field name="descuento" sum="Total Descuento"/>
+                
+                <field name="subtotal" 
+                       options="{'formulated': 'precio * cantidad'}" 
+                       sum="Subtotal"/>
+                
+                <field name="total" 
+                       options="{'formulated': '(precio * cantidad) - descuento'}" 
+                       sum="Total"/>
+                
+                <field name="promedio" 
+                       options="{'formulated': 'cantidad > 0 ? Math.round(precio / cantidad) : 0'}" 
+                       sum="Promedio"/>
+                
+                <field name="iva" 
+                       options="{'formulated': 'total * 0.21'}" 
+                       sum="IVA 21%"/>
+            </tree>
+        </field>
+    </record>
+    
+    ========================================================================
+    FÓRMULAS DISPONIBLES:
+    ========================================================================
+    
+    - Operadores: + - * / % ** (potencia)
+    - Comparación: == != < > <= >=
+    - Ternario: condicion ? valor_true : valor_false
+    - Math: Math.abs(), Math.round(), Math.floor(), Math.ceil(), 
+            Math.max(), Math.min(), Math.sqrt(), etc.
+    
+    ========================================================================
+    -->
+</odoo>
