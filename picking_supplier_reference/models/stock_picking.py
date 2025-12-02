@@ -6,4 +6,4 @@ from odoo.exceptions import UserError, ValidationError
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
-    supplier_reference = fields.Char('Supplier Reference', copy=False)
+    supplier_reference = fields.Char('Supplier Reference', copy=False, tracking=True)

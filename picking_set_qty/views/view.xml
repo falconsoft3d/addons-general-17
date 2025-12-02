@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vista heredada de stock.picking para agregar el botón Cantidades 0 -->
+    <record id="view_picking_form_set_qty_zero" model="ir.ui.view">
+        <field name="name">stock.picking.form.set.qty.zero</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <button name="action_cancel" position="after">
+                <button name="action_set_quantities_to_zero" 
+                        string="Cantidades 0" 
+                        type="object" 
+                        class="btn-secondary"
+                        groups="stock.group_stock_user"
+                        invisible="state == 'done'"/>
+            </button>
+        </field>
+    </record>
+</odoo>
