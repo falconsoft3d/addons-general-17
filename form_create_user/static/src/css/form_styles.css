@@ -1,0 +1,94 @@
+/* Estilos personalizados para el formulario de registro */
+
+.user-register-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.user-register-form .form-control {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.user-register-form .form-control:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 0 0.2rem rgba(66, 133, 244, 0.25);
+}
+
+.user-register-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.user-register-form .btn-primary {
+    background-color: #4285f4;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 48px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.user-register-form .btn-primary:hover {
+    background-color: #357ae8;
+}
+
+.user-register-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.user-register-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.user-register-header hr {
+    width: 80px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 15px auto;
+    border: none;
+}
+
+.user-register-header p {
+    color: #6c757d;
+}
+
+/* Estilos para la página de éxito */
+.success-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.credentials-box {
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.credentials-box strong {
+    font-size: 1.1rem;
+    color: #1565c0;
+}
+
+.credentials-box .credential-value {
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.credentials-box .login-value {
+    color: #1976d2;
+}
+
+.credentials-box .password-value {
+    color: #d32f2f;
+}

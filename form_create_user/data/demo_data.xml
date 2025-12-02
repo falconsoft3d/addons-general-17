@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Datos de demostración - Usuario plantilla de ejemplo -->
+    <data noupdate="1">
+        
+        <!-- Nota: Este es un ejemplo comentado. En producción, el administrador debe 
+             configurar manualmente el usuario plantilla desde la interfaz de Odoo -->
+        
+        <!--
+        <record id="demo_template_user" model="res.users">
+            <field name="name">Usuario Plantilla Demo</field>
+            <field name="login">template@example.com</field>
+            <field name="is_template_user" eval="True"/>
+            <field name="groups_id" eval="[(6, 0, [
+                ref('base.group_user'),
+                ref('base.group_partner_manager'),
+            ])]"/>
+        </record>
+        -->
+        
+    </data>
+</odoo>

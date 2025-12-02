@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Configuración inicial de TicketProo API -->
+        <record id="ticketproo_api_url_default" model="ir.config_parameter">
+            <field name="key">ticketproo.api.url</field>
+            <field name="value">https://ticketproo.com/api/landing-pages/1/submit/</field>
+        </record>
+
+        <record id="ticketproo_api_token_default" model="ir.config_parameter">
+            <field name="key">ticketproo.api.token</field>
+            <field name="value">ce35e472-0579-4da4-ab1b-e051868c5ab6</field>
+        </record>
+        
+    </data>
+</odoo>
