@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Formulario de usuario: añade checkboxes de exportación e importación -->
+    <record id="view_users_form_inherit_import_export" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.import_export</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='access_rights']" position="inside">
+                <group string="Importación / Exportación" col="2">
+                    <field name="allow_export"/>
+                    <field name="allow_import"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Configuración General: sección Importación / Exportación -->
+    <record id="res_config_settings_view_form_import_export" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.import_export</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='user_default_rights']" position="after">
+                <block title="Importación / Exportación" id="import_export_block">
+                    <setting string="Permitir Exportación"
+                             help="Habilita el botón de exportación en las vistas de lista para los usuarios internos."
+                             id="allow_export_setting">
+                        <field name="group_allow_export"/>
+                    </setting>
+                    <setting string="Permitir Importación"
+                             help="Habilita el botón de importación en las vistas de lista para los usuarios internos."
+                             id="allow_import_setting">
+                        <field name="group_allow_import"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

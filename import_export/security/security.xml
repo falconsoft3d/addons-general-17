@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Grupo para controlar exportación -->
+        <record id="group_allow_export" model="res.groups">
+            <field name="name">Permitir Exportación</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+        <!-- Grupo para controlar importación -->
+        <record id="group_allow_import" model="res.groups">
+            <field name="name">Permitir Importación</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Los grupos de la categoría "Archivar" se muestran automáticamente
+         en la pestaña "Derechos de acceso" del formulario de usuario
+         gracias a visible=True en la categoría. -->
+</odoo>

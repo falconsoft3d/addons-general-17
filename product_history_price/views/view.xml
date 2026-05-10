@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree view para el histórico de precios -->
+    <record id="view_product_price_history_tree" model="ir.ui.view">
+        <field name="name">product.price.history.tree</field>
+        <field name="model">product.price.history</field>
+        <field name="arch" type="xml">
+            <tree string="Histórico de Precios" create="false" edit="false" delete="false">
+                <field name="change_date" string="Fecha"/>
+                <field name="user_id" string="Usuario"/>
+                <field name="standard_price" string="Coste"/>
+                <field name="list_price" string="Precio de Venta"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view heredado de product.template con pestaña de histórico -->
+    <record id="product_template_form_view_inherit_price_history" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.price.history</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Histórico de Precios" name="price_history">
+                    <group>
+                        <group>
+                            <field name="price_history_count" string="Total de Cambios"/>
+                        </group>
+                    </group>
+                    <field name="price_history_ids" readonly="1">
+                        <tree string="Histórico de Precios" create="false" edit="false" delete="false">
+                            <field name="change_date" string="Fecha"/>
+                            <field name="user_id" string="Usuario"/>
+                            <field name="standard_price" string="Coste"/>
+                            <field name="list_price" string="Precio de Venta"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

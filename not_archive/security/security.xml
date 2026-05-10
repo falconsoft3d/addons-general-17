@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="module_category_not_archive" model="ir.module.category">
+        <field name="name">Archivar</field>
+        <field name="sequence">100</field>
+        <field name="visible" eval="True"/>
+    </record>
+
+    <record id="group_can_archive" model="res.groups">
+        <field name="name">Permitir Archivar</field>
+        <field name="category_id" ref="module_category_not_archive"/>
+        <field name="comment">Los usuarios con este permiso pueden archivar y desarchivar registros en cualquier modelo.</field>
+    </record>
+</odoo>
