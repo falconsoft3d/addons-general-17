@@ -21,8 +21,7 @@
 ##############################################################################
 
 import logging
-import json
-from odoo import models, fields, api, SUPERUSER_ID
+from odoo import models, fields, api
 
 _logger = logging.getLogger(__name__)
 
@@ -54,12 +53,10 @@ class SecureAuditLog(models.Model):
     # Tipos de evento disponibles
     EVENT_USER_CREATED = 'user_created'
     EVENT_COMPANY_CHANGED = 'company_changed'
-    EVENT_CONFIG_CHANGED = 'config_changed'
 
     EVENT_TYPES = [
         ('user_created', u'Usuario creado'),
         ('company_changed', u'Configuración de compañía modificada'),
-        ('config_changed', u'Parámetro de configuración modificado'),
     ]
 
     date = fields.Datetime(
@@ -115,18 +112,19 @@ class SecureAuditLog(models.Model):
 class ResUsersAudit(models.Model):
     _inherit = 'res.users'
 
-    @api.model
-    def create(self, vals):
-        user = super(ResUsersAudit, self).create(vals)
-        login = vals.get('login', u'')
-        name = vals.get('name', u'')
-        description = u'Nuevo usuario creado.\nNombre: %s\nLogin: %s' % (name, login)
-        self.env['secure.audit.log']._log(
-            event_type=SecureAuditLog.EVENT_USER_CREATED,
-            description=description,
-            target_user_id=user.id,
-        )
-        return user
+    @api.model_create_multi
+    def create(self, vals_list):
+        users = super(ResUsersAudit, self).create(vals_list)
+        for user, vals in zip(users, vals_list):
+            login = vals.get('login', u'')
+            name = vals.get('name', u'')
+            description = u'Nuevo usuario creado.\nNombre: %s\nLogin: %s' % (name, login)
+            self.env['secure.audit.log']._log(
+                event_type=SecureAuditLog.EVENT_USER_CREATED,
+                description=description,
+                target_user_id=user.id,
+            )
+        return users
 
 
 class ResCompanyAudit(models.Model):
@@ -188,61 +186,3 @@ class ResCompanyAudit(models.Model):
                     )
 
         return result
-
-
-# Prefijos de ir.config_parameter sin interés de seguridad (muy frecuentes)
-_CONFIG_IGNORED_PREFIXES = (
-    'web.base.url',
-    'base_setup.',
-    'mail.catchall',
-    'mail.bounce',
-)
-
-
-class IrConfigParameterAudit(models.Model):
-    _inherit = 'ir.config_parameter'
-
-    def write(self, vals):
-        if 'value' in vals:
-            old_values = {rec.id: (rec.key, rec.value) for rec in self}
-        result = super().write(vals)
-        if 'value' in vals:
-            for rec in self:
-                key, old_value = old_values[rec.id]
-                new_value = rec.value
-                if old_value == new_value:
-                    continue
-                if any(key.startswith(p) for p in _CONFIG_IGNORED_PREFIXES):
-                    continue
-                description = (
-                    u'Parámetro: %s\nAnterior: %s\nNuevo: %s'
-                    % (key, old_value, new_value)
-                )
-                try:
-                    self.env['secure.audit.log']._log(
-                        event_type=SecureAuditLog.EVENT_CONFIG_CHANGED,
-                        description=description,
-                    )
-                except Exception:
-                    _logger.exception(
-                        'secure_audit_log: error al registrar cambio de parámetro %s', key
-                    )
-        return result
-
-    @api.model
-    def create(self, vals):
-        rec = super().create(vals)
-        key = vals.get('key', '')
-        value = vals.get('value', '')
-        if key and not any(key.startswith(p) for p in _CONFIG_IGNORED_PREFIXES):
-            description = u'Parámetro creado: %s\nValor: %s' % (key, value)
-            try:
-                self.env['secure.audit.log']._log(
-                    event_type=SecureAuditLog.EVENT_CONFIG_CHANGED,
-                    description=description,
-                )
-            except Exception:
-                _logger.exception(
-                    'secure_audit_log: error al registrar creación de parámetro %s', key
-                )
-        return rec

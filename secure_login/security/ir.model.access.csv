@@ -4,3 +4,4 @@ access_secure_login_failed_admin,secure.login.failed.admin,model_secure_login_fa
 access_secure_password_wizard_admin,secure.password.wizard.admin,model_secure_password_wizard,base.group_system,1,1,1,1
 access_secure_audit_log_admin,secure.audit.log.admin,model_secure_audit_log,base.group_system,1,0,1,0
 access_security_responsible_admin,security.responsible.admin,model_security_responsible,base.group_system,1,1,1,1
+access_secure_database_action_admin,secure.database.action.admin,model_secure_database_action,base.group_system,1,0,1,0

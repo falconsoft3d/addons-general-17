@@ -20,7 +20,7 @@
         <field name="name">secure.login.form</field>
         <field name="model">secure.login</field>
         <field name="arch" type="xml">
-            <form string="Inicio de Sesión" create="false" delete="false">
+            <form string="Inicio de Sesión" create="false" edit="false" delete="false">
                 <sheet>
                     <group>
                         <group>
@@ -46,7 +46,7 @@
                 <field name="login"/>
                 <field name="ip_address"/>
                 <filter name="today" string="Hoy"
-                    domain="[('date','&gt;=', (context_today()).strftime('%Y-%m-%d 00:00:00'))]"/>
+                    domain="[('date','&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00'))]"/>
                 <group expand="0" string="Agrupar por">
                     <filter name="group_user" string="Usuario" context="{'group_by': 'user_id'}"/>
                     <filter name="group_date" string="Fecha" context="{'group_by': 'date:day'}"/>
@@ -80,7 +80,7 @@
         <field name="name">secure.login.failed.form</field>
         <field name="model">secure.login.failed</field>
         <field name="arch" type="xml">
-            <form string="Intento Fallido" create="false" delete="false">
+            <form string="Intento Fallido" create="false" edit="false" delete="false">
                 <sheet>
                     <group>
                         <group>
@@ -104,7 +104,7 @@
                 <field name="login"/>
                 <field name="ip_address"/>
                 <filter name="today" string="Hoy"
-                    domain="[('date','&gt;=', (context_today()).strftime('%Y-%m-%d 00:00:00'))]"/>
+                    domain="[('date','&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00'))]"/>
                 <group expand="0" string="Agrupar por">
                     <filter name="group_login" string="Login" context="{'group_by': 'login'}"/>
                     <filter name="group_ip" string="IP" context="{'group_by': 'ip_address'}"/>
@@ -157,7 +157,7 @@
                             string="Generar y Descargar Contraseñas"
                             class="btn-primary"
                             data-loading-text="Generando…"/>
-                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                    <button string="Cancelar" class="btn-default" special="cancel"/>
                 </footer>
             </form>
         </field>
@@ -188,8 +188,7 @@
         <field name="arch" type="xml">
             <tree string="Logs de Seguridad"
                   decoration-info="event_type == 'user_created'"
-                  decoration-warning="event_type == 'company_changed'"
-                  decoration-danger="event_type == 'config_changed'">
+                  decoration-warning="event_type == 'company_changed'">
                 <field name="date"/>
                 <field name="event_type"/>
                 <field name="operator_id"/>
@@ -204,7 +203,7 @@
         <field name="name">secure.audit.log.form</field>
         <field name="model">secure.audit.log</field>
         <field name="arch" type="xml">
-            <form string="Log de Seguridad" create="false" delete="false">
+            <form string="Log de Seguridad" create="false" edit="false" delete="false">
                 <sheet>
                     <group>
                         <group string="Evento">
@@ -238,10 +237,8 @@
                     domain="[('event_type','=','user_created')]"/>
                 <filter name="company_changed" string="Cambios en compañía"
                     domain="[('event_type','=','company_changed')]"/>
-                <filter name="config_changed" string="Cambios de configuración"
-                    domain="[('event_type','=','config_changed')]"/>
                 <filter name="today" string="Hoy"
-                    domain="[('date','&gt;=', (context_today()).strftime('%Y-%m-%d 00:00:00'))]"/>
+                    domain="[('date','&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00'))]"/>
                 <group expand="0" string="Agrupar por">
                     <filter name="group_event" string="Tipo de Evento" context="{'group_by': 'event_type'}"/>
                     <filter name="group_operator" string="Ejecutado por" context="{'group_by': 'operator_id'}"/>
@@ -258,6 +255,77 @@
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="view_secure_audit_log_tree"/>
         <field name="search_view_id" ref="view_secure_audit_log_search"/>
+    </record>
+
+    <!-- ========== secure.database.action ========== -->
+
+    <record id="view_secure_database_action_tree" model="ir.ui.view">
+        <field name="name">secure.database.action.tree</field>
+        <field name="model">secure.database.action</field>
+        <field name="arch" type="xml">
+            <tree string="Intentos de Descarga o Eliminación de Base de Datos"
+                  decoration-success="success == True"
+                  decoration-danger="success == False">
+                <field name="date"/>
+                <field name="action"/>
+                <field name="database_name"/>
+                <field name="success"/>
+                <field name="ip_address"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_secure_database_action_form" model="ir.ui.view">
+        <field name="name">secure.database.action.form</field>
+        <field name="model">secure.database.action</field>
+        <field name="arch" type="xml">
+            <form string="Intento sobre Base de Datos" create="false" edit="false" delete="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="action"/>
+                            <field name="database_name"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="success"/>
+                            <field name="ip_address"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_secure_database_action_search" model="ir.ui.view">
+        <field name="name">secure.database.action.search</field>
+        <field name="model">secure.database.action</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Intentos sobre Base de Datos">
+                <field name="database_name"/>
+                <field name="ip_address"/>
+                <filter name="backup" string="Descargas (Backup)" domain="[('action','=','backup')]"/>
+                <filter name="drop" string="Eliminaciones" domain="[('action','=','drop')]"/>
+                <filter name="success" string="Exitosos" domain="[('success','=',True)]"/>
+                <filter name="failed" string="Fallidos" domain="[('success','=',False)]"/>
+                <filter name="today" string="Hoy"
+                    domain="[('date','&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00'))]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter name="group_action" string="Acción" context="{'group_by': 'action'}"/>
+                    <filter name="group_database" string="Base de Datos" context="{'group_by': 'database_name'}"/>
+                    <filter name="group_success" string="Resultado" context="{'group_by': 'success'}"/>
+                    <filter name="group_date" string="Fecha" context="{'group_by': 'date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_secure_database_action" model="ir.actions.act_window">
+        <field name="name">Intentos sobre Base de Datos</field>
+        <field name="res_model">secure.database.action</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_secure_database_action_tree"/>
+        <field name="search_view_id" ref="view_secure_database_action_search"/>
     </record>
 
     <!-- ========== security.responsible ========== -->
@@ -283,6 +351,7 @@
             <form string="Responsable de Seguridad">
                 <sheet>
                     <div class="oe_title">
+                        <label for="partner_id" class="oe_edit_only"/>
                         <h1><field name="partner_id" placeholder="Seleccionar contacto..."/></h1>
                     </div>
                     <div class="alert alert-info" role="alert" style="margin-bottom:12px;">
@@ -363,11 +432,18 @@
         sequence="40"
         groups="base.group_system"/>
 
+    <menuitem id="menu_secure_database_action"
+        name="Intentos sobre Base de Datos"
+        parent="menu_secure_login_root"
+        action="action_secure_database_action"
+        sequence="50"
+        groups="base.group_system"/>
+
     <menuitem id="menu_security_responsible"
         name="Responsables de Seguridad"
         parent="menu_secure_login_root"
         action="action_security_responsible"
-        sequence="50"
+        sequence="60"
         groups="base.group_system"/>
 
 </odoo>

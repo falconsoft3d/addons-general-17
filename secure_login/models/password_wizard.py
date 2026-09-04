@@ -180,7 +180,6 @@ class SecurePasswordWizard(models.TransientModel):
         attachment = self.env['ir.attachment'].create({
             'name': file_name,
             'datas': file_data,
-            'datas_fname': file_name,
             'res_model': self._name,
             'res_id': self.id,
             'type': 'binary',

@@ -24,6 +24,7 @@ import logging
 from datetime import datetime, timedelta
 from odoo import models, fields, api, SUPERUSER_ID
 from odoo import registry as registry_get
+from odoo.exceptions import AccessDenied
 from .security_responsible import ALERT_THRESHOLD, ALERT_WINDOW_SECONDS
 
 _logger = logging.getLogger(__name__)
@@ -54,28 +55,37 @@ class ResUsers(models.Model):
     _inherit = 'res.users'
 
     @classmethod
-    def _login(cls, db, login, password, user_agent_env):
-        from odoo.exceptions import AccessDenied as _AccessDenied
-        from odoo.http import request as _request
-
+    def authenticate(cls, db, login, password, user_agent_env):
         ip = False
+        if user_agent_env and isinstance(user_agent_env, dict):
+            ip = user_agent_env.get('REMOTE_ADDR', False)
         try:
-            if _request:
-                ip = _request.httprequest.environ.get('REMOTE_ADDR', False)
-        except Exception:
-            pass
+            uid = super(ResUsers, cls).authenticate(db, login, password, user_agent_env)
+        except AccessDenied:
+            cls._register_secure_login_attempt(db, login, ip, uid=False)
+            raise
+        cls._register_secure_login_attempt(db, login, ip, uid=uid)
+        return uid
 
+    @classmethod
+    def _register_secure_login_attempt(cls, db, login, ip, uid):
         try:
-            uid = super()._login(db, login, password, user_agent_env=user_agent_env)
-        except _AccessDenied:
-            try:
-                with registry_get(db).cursor() as cr:
-                    env = api.Environment(cr, SUPERUSER_ID, {})
+            with registry_get(db).cursor() as cr:
+                env = api.Environment(cr, SUPERUSER_ID, {})
+                if uid:
+                    env['secure.login'].create({
+                        'user_id': uid,
+                        'login': login,
+                        'date': fields.Datetime.now(),
+                        'ip_address': ip,
+                    })
+                else:
                     env['secure.login.failed'].create({
                         'login': login,
                         'date': fields.Datetime.now(),
                         'ip_address': ip,
                     })
+                    # Verificar umbral de fuerza bruta en la última ventana de tiempo
                     try:
                         window_start = (
                             datetime.utcnow() - timedelta(seconds=ALERT_WINDOW_SECONDS)
@@ -95,20 +105,5 @@ class ResUsers(models.Model):
                         _logger.exception(
                             'secure_login: error al verificar umbral de fuerza bruta'
                         )
-            except Exception:
-                _logger.exception('secure_login: error al registrar intento fallido')
-            raise
-
-        try:
-            with registry_get(db).cursor() as cr:
-                env = api.Environment(cr, SUPERUSER_ID, {})
-                env['secure.login'].create({
-                    'user_id': uid,
-                    'login': login,
-                    'date': fields.Datetime.now(),
-                    'ip_address': ip,
-                })
         except Exception:
-            _logger.exception('secure_login: error al registrar inicio de sesión')
-
-        return uid
+            _logger.exception('secure_login: error al registrar intento de acceso')
